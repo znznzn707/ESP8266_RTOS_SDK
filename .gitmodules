@@ -17,3 +17,6 @@
 [submodule "components/coap/libcoap"]
 	path = components/coap/libcoap
 	url = ../../obgm/libcoap.git
+[submodule "components/lvgl"]
+	path = components/lvgl
+	url = https://github.com/lvgl/lvgl.git
