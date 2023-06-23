@@ -25,7 +25,6 @@ void LCD_Draw(unsigned short xsta,unsigned short ysta,unsigned short xend,unsign
 		LCD_WR_DATA(*tmp);
 		tmp++;
 	} 
-
 #endif
 
 }

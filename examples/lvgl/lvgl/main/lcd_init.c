@@ -1,6 +1,7 @@
 #include "lcd_init.h"
 
-#define delay_ms(x) vTaskDelay(pdMS_TO_TICKS(x))
+#define delay_ms(x) vTaskDelay(x / portTICK_PERIOD_MS)
+
 
 void LCD_GPIO_Init(void)
 {
@@ -230,8 +231,6 @@ void LCD_Init(void)
 
 	LCD_WR_REG(0x29);
 } 
-
-
 
 
 
