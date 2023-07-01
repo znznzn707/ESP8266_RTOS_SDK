@@ -577,10 +577,12 @@ class SectionsInfo(dict):
     def add_sections_info(self, sections_info_dump):
         first_line = sections_info_dump.readline()
 
-        archive_path = (Literal("In archive").suppress() +
+        from pyparsing import restOfLine
+        archive_path = (Literal("In archive").suppress() + White().suppress() + restOfLine.setResultsName("archive_path").setParseAction(lambda t: t[0][:-1]))
+        # archive_path = (Literal("In archive").suppress() +
                         # trim the last character from archive_path, :
-                        Word(printables + " ").setResultsName("archive_path").setParseAction(lambda t: t[0][:-1]) +
-                        LineEnd())
+                        # Word(printables + " ").setResultsName("archive_path").setParseAction(lambda t: t[0][:-1]) +
+                        # LineEnd())
         parser = archive_path
 
         results = None
